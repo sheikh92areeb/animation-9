@@ -19,10 +19,16 @@
 
             i.style.setProperty('--x', getTransitionValue());
             i.style.setProperty('--y', getTransitionValue());
+
+            document.body.appendChild(i);
+
+            setTimeout(() => {
+                document.body.removeChild(i);
+            }, 2000);
         }
 
         const getTransitionValue = () => {
-            return `${Math.random() * 400 - 200}`;
+            return `${Math.random() * 400 - 200}px`;
         }
 
         document.addEventListener('mousemove', spark);
